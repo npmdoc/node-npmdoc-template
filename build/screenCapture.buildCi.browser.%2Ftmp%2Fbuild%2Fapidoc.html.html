@@ -1,0 +1,3364 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="https://github.com/jonschlinkert/template">template (v0.17.5)</a>
+</h1>
+<h4>Render templates using any engine. Supports, layouts, pages, partials and custom template types. Use template helpers, middleware, routes, loaders, and lots more. Powers assemble, verb and other node.js apps.</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.template">module template</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.template.template">
+            function <span class="apidocSignatureSpan"></span>template
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.template.collection">
+            function <span class="apidocSignatureSpan">template.</span>collection
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.template.extend">
+            function <span class="apidocSignatureSpan">template.</span>extend
+            <span class="apidocSignatureSpan">(Ctor)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.template.file">
+            function <span class="apidocSignatureSpan">template.</span>file
+            <span class="apidocSignatureSpan">(file, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.template.item">
+            function <span class="apidocSignatureSpan">template.</span>item
+            <span class="apidocSignatureSpan">(item, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.template.list">
+            function <span class="apidocSignatureSpan">template.</span>list
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.template.super_">
+            function <span class="apidocSignatureSpan">template.</span>super_
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.template.toString">
+            function <span class="apidocSignatureSpan">template.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.template.view">
+            function <span class="apidocSignatureSpan">template.</span>view
+            <span class="apidocSignatureSpan">(view, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.template.views">
+            function <span class="apidocSignatureSpan">template.</span>views
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">template.</span>super_.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">template.</span>utils</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.template.collection">module template.collection</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.template.collection.collection">
+            function <span class="apidocSignatureSpan">template.</span>collection
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.template.collection.extend">
+            function <span class="apidocSignatureSpan">template.collection.</span>extend
+            <span class="apidocSignatureSpan">(Ctor)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.template.collection.super_">
+            function <span class="apidocSignatureSpan">template.collection.</span>super_
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.template.file">module template.file</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.template.file.file">
+            function <span class="apidocSignatureSpan">template.</span>file
+            <span class="apidocSignatureSpan">(file, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.template.file.extend">
+            function <span class="apidocSignatureSpan">template.file.</span>extend
+            <span class="apidocSignatureSpan">(Ctor)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.template.file.super_">
+            function <span class="apidocSignatureSpan">template.file.</span>super_
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.template.item">module template.item</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.template.item.item">
+            function <span class="apidocSignatureSpan">template.</span>item
+            <span class="apidocSignatureSpan">(item, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.template.item.extend">
+            function <span class="apidocSignatureSpan">template.item.</span>extend
+            <span class="apidocSignatureSpan">(Ctor)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.template.item.super_">
+            function <span class="apidocSignatureSpan">template.item.</span>super_
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.template.list">module template.list</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.template.list.list">
+            function <span class="apidocSignatureSpan">template.</span>list
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.template.list.extend">
+            function <span class="apidocSignatureSpan">template.list.</span>extend
+            <span class="apidocSignatureSpan">(Ctor)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.template.list.super_">
+            function <span class="apidocSignatureSpan">template.list.</span>super_
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.template.super_">module template.super_</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.template.super_.super_">
+            function <span class="apidocSignatureSpan">template.</span>super_
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.template.super_.extend">
+            function <span class="apidocSignatureSpan">template.super_.</span>extend
+            <span class="apidocSignatureSpan">(Ctor)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.template.super_.prototype">module template.super_.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.template.super_.prototype.addEventListener">
+            function <span class="apidocSignatureSpan">template.super_.prototype.</span>addEventListener
+            <span class="apidocSignatureSpan">(event, fn)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.template.super_.prototype.clone">
+            function <span class="apidocSignatureSpan">template.super_.prototype.</span>clone
+            <span class="apidocSignatureSpan">(keys)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.template.super_.prototype.constructor">
+            function <span class="apidocSignatureSpan">template.super_.prototype.</span>constructor
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.template.super_.prototype.define">
+            function <span class="apidocSignatureSpan">template.super_.prototype.</span>define
+            <span class="apidocSignatureSpan">(key, value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.template.super_.prototype.defineOption">
+            function <span class="apidocSignatureSpan">template.super_.prototype.</span>defineOption
+            <span class="apidocSignatureSpan">(key, value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.template.super_.prototype.disable">
+            function <span class="apidocSignatureSpan">template.super_.prototype.</span>disable
+            <span class="apidocSignatureSpan">(key)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.template.super_.prototype.disabled">
+            function <span class="apidocSignatureSpan">template.super_.prototype.</span>disabled
+            <span class="apidocSignatureSpan">(key)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.template.super_.prototype.emit">
+            function <span class="apidocSignatureSpan">template.super_.prototype.</span>emit
+            <span class="apidocSignatureSpan">(event)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.template.super_.prototype.enable">
+            function <span class="apidocSignatureSpan">template.super_.prototype.</span>enable
+            <span class="apidocSignatureSpan">(key)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.template.super_.prototype.enabled">
+            function <span class="apidocSignatureSpan">template.super_.prototype.</span>enabled
+            <span class="apidocSignatureSpan">(key)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.template.super_.prototype.forIn">
+            function <span class="apidocSignatureSpan">template.super_.prototype.</span>forIn
+            <span class="apidocSignatureSpan">(fn)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.template.super_.prototype.forOwn">
+            function <span class="apidocSignatureSpan">template.super_.prototype.</span>forOwn
+            <span class="apidocSignatureSpan">(fn)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.template.super_.prototype.forward">
+            function <span class="apidocSignatureSpan">template.super_.prototype.</span>forward
+            <span class="apidocSignatureSpan">(obj, keys)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.template.super_.prototype.fragmentCache">
+            function <span class="apidocSignatureSpan">template.super_.prototype.</span>fragmentCache
+            <span class="apidocSignatureSpan">(key, val)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.template.super_.prototype.get">
+            function <span class="apidocSignatureSpan">template.super_.prototype.</span>get
+            <span class="apidocSignatureSpan">(prop)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.template.super_.prototype.hasListeners">
+            function <span class="apidocSignatureSpan">template.super_.prototype.</span>hasListeners
+            <span class="apidocSignatureSpan">(event)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.template.super_.prototype.hint">
+            function <span class="apidocSignatureSpan">template.super_.prototype.</span>hint
+            <span class="apidocSignatureSpan">(key, val)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.template.super_.prototype.listeners">
+            function <span class="apidocSignatureSpan">template.super_.prototype.</span>listeners
+            <span class="apidocSignatureSpan">(event)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.template.super_.prototype.mixin">
+            function <span class="apidocSignatureSpan">template.super_.prototype.</span>mixin
+            <span class="apidocSignatureSpan">(name, fn)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.template.super_.prototype.off">
+            function <span class="apidocSignatureSpan">template.super_.prototype.</span>off
+            <span class="apidocSignatureSpan">(event, fn)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.template.super_.prototype.omit">
+            function <span class="apidocSignatureSpan">template.super_.prototype.</span>omit
+            <span class="apidocSignatureSpan">(keys)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.template.super_.prototype.on">
+            function <span class="apidocSignatureSpan">template.super_.prototype.</span>on
+            <span class="apidocSignatureSpan">(event, fn)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.template.super_.prototype.once">
+            function <span class="apidocSignatureSpan">template.super_.prototype.</span>once
+            <span class="apidocSignatureSpan">(event, fn)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.template.super_.prototype.option">
+            function <span class="apidocSignatureSpan">template.super_.prototype.</span>option
+            <span class="apidocSignatureSpan">(key, val)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.template.super_.prototype.pick">
+            function <span class="apidocSignatureSpan">template.super_.prototype.</span>pick
+            <span class="apidocSignatureSpan">(keys)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.template.super_.prototype.pickOption">
+            function <span class="apidocSignatureSpan">template.super_.prototype.</span>pickOption
+            <span class="apidocSignatureSpan">(prop)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.template.super_.prototype.removeAllListeners">
+            function <span class="apidocSignatureSpan">template.super_.prototype.</span>removeAllListeners
+            <span class="apidocSignatureSpan">(event, fn)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.template.super_.prototype.removeEventListener">
+            function <span class="apidocSignatureSpan">template.super_.prototype.</span>removeEventListener
+            <span class="apidocSignatureSpan">(event, fn)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.template.super_.prototype.removeListener">
+            function <span class="apidocSignatureSpan">template.super_.prototype.</span>removeListener
+            <span class="apidocSignatureSpan">(event, fn)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.template.super_.prototype.renameKey">
+            function <span class="apidocSignatureSpan">template.super_.prototype.</span>renameKey
+            <span class="apidocSignatureSpan">(key, fn)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.template.super_.prototype.set">
+            function <span class="apidocSignatureSpan">template.super_.prototype.</span>set
+            <span class="apidocSignatureSpan">(prop, val)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.template.super_.prototype.use">
+            function <span class="apidocSignatureSpan">template.super_.prototype.</span>use
+            <span class="apidocSignatureSpan">(fn)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.template.super_.prototype.visit">
+            function <span class="apidocSignatureSpan">template.super_.prototype.</span>visit
+            <span class="apidocSignatureSpan">(method, obj)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.template.utils">module template.utils</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.template.utils.arrayify">
+            function <span class="apidocSignatureSpan">template.utils.</span>arrayify
+            <span class="apidocSignatureSpan">(val)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.template.utils.bindAll">
+            function <span class="apidocSignatureSpan">template.utils.</span>bindAll
+            <span class="apidocSignatureSpan">(target, thisArg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.template.utils.defineProp">
+            function <span class="apidocSignatureSpan">template.utils.</span>defineProp
+            <span class="apidocSignatureSpan">(obj, prop, val)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.template.utils.delegate">
+            function <span class="apidocSignatureSpan">template.utils.</span>delegate
+            <span class="apidocSignatureSpan">(receiver, provider, clone)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.template.utils.error">
+            function <span class="apidocSignatureSpan">template.utils.</span>error
+            <span class="apidocSignatureSpan">(msg, val)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.template.utils.forward">
+            function <span class="apidocSignatureSpan">template.utils.</span>forward
+            <span class="apidocSignatureSpan">(receiver, provider, methods)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.template.utils.getLocals">
+            function <span class="apidocSignatureSpan">template.utils.</span>getLocals
+            <span class="apidocSignatureSpan">(locals, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.template.utils.identity">
+            function <span class="apidocSignatureSpan">template.utils.</span>identity
+            <span class="apidocSignatureSpan">(val)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.template.utils.isLoader">
+            function <span class="apidocSignatureSpan">template.utils.</span>isLoader
+            <span class="apidocSignatureSpan">(val, cache)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.template.utils.isPromise">
+            function <span class="apidocSignatureSpan">template.utils.</span>isPromise
+            <span class="apidocSignatureSpan">(val)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.template.utils.isStream">
+            function <span class="apidocSignatureSpan">template.utils.</span>isStream
+            <span class="apidocSignatureSpan">(val)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.template.utils.matchKey">
+            function <span class="apidocSignatureSpan">template.utils.</span>matchKey
+            <span class="apidocSignatureSpan">(obj, patterns, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.template.utils.matchKeys">
+            function <span class="apidocSignatureSpan">template.utils.</span>matchKeys
+            <span class="apidocSignatureSpan">(obj, patterns, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.template.utils.noop">
+            function <span class="apidocSignatureSpan">template.utils.</span>noop
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.template.utils.rename">
+            function <span class="apidocSignatureSpan">template.utils.</span>rename
+            <span class="apidocSignatureSpan">(views, fn)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.template.utils.setProto">
+            function <span class="apidocSignatureSpan">template.utils.</span>setProto
+            <span class="apidocSignatureSpan">(obj, proto)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.template.utils.slice">
+            function <span class="apidocSignatureSpan">template.utils.</span>slice
+            <span class="apidocSignatureSpan">(arr, i)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">template.utils.</span>methods</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">template.utils.</span>vinylProps</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.template.view">module template.view</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.template.view.view">
+            function <span class="apidocSignatureSpan">template.</span>view
+            <span class="apidocSignatureSpan">(view, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.template.view.extend">
+            function <span class="apidocSignatureSpan">template.view.</span>extend
+            <span class="apidocSignatureSpan">(Ctor)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.template.view.super_">
+            function <span class="apidocSignatureSpan">template.view.</span>super_
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.template.views">module template.views</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.template.views.views">
+            function <span class="apidocSignatureSpan">template.</span>views
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.template.views.extend">
+            function <span class="apidocSignatureSpan">template.views.</span>extend
+            <span class="apidocSignatureSpan">(Ctor)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.template.views.super_">
+            function <span class="apidocSignatureSpan">template.views.</span>super_
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.template" id="apidoc.module.template">module template</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.template.template" id="apidoc.element.template.template">
+        function <span class="apidocSignatureSpan"></span>template
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Template(options) {
+  if (!(this instanceof Template)) {
+    return new Template(options);
+  }
+  Base.call(this, options);
+  this.init();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.template.collection" id="apidoc.element.template.collection">
+        function <span class="apidocSignatureSpan">template.</span>collection
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Collection(options) {
+  Base.call(this, options);
+  this.define('lists', {});
+  this.define('_items', {});
+  this.define('Item', this.options.Item || require('./item'));
+  this.define('List', this.options.List || require('./list'));
+  mixins(this);
+
+<span class="apidocCodeCommentSpan">  /**
+   * Get an object representing the current items on the instance.
+   *
+   * ```js
+   * var items = this.items;
+   * ```
+   *
+   * @return {Object} Object of items
+   */
+</span>
+  Object.defineProperty(this, 'items', {
+    enumerable: false,
+    configurable: true,
+    get: function () {
+      return this._items;
+    },
+    set: function (items) {
+      lazy.forIn(items, function (item, key) {
+        delete this._items[key];
+        delete this[key];
+        this.set(key, item);
+      }, this);
+    }
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+  // decorate named loader methods back to the collection
+  // to allow chaining like `.pages().pages()` etc
+  utils.defineProp(views, plural, fn);
+  utils.defineProp(views, single, fn);
+
+  // add collection and view (item) helpers
+  helpers.<span class="apidocCodeKeywordSpan">collection</span>(this, views, opts);
+  helpers.view(this, views, opts);
+  return this;
+},
+
+/**
+ * Set view types for a collection.
+ *
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.template.extend" id="apidoc.element.template.extend">
+        function <span class="apidocSignatureSpan">template.</span>extend
+        <span class="apidocSignatureSpan">(Ctor)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">extend = function (Ctor) {
+  util.inherits(Ctor, Template);
+  lazy.extend(Ctor, Template);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+this.init();
+}
+
+/**
+ * Inherit `Base`
+ */
+
+Base.<span class="apidocCodeKeywordSpan">extend</span>(Template);
+
+/**
+ * `Template` prototype methods
+ */
+
+utils.delegate(Template.prototype, {
+constructor: Template,
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.template.file" id="apidoc.element.template.file">
+        function <span class="apidocSignatureSpan">template.</span>file
+        <span class="apidocSignatureSpan">(file, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function File(file, options) {
+  Item.call(this, file, options);
+  this.initFile(file);
+  return file;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.template.item" id="apidoc.element.template.item">
+        function <span class="apidocSignatureSpan">template.</span>item
+        <span class="apidocSignatureSpan">(item, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Item(item, options) {
+  Base.call(this, options);
+  this.define('collection', this.options.collection);
+
+  if (typeof item === 'object') {
+    this.visit('set', item);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+  /**
+* Get or Add an item to the list. Creates a new instance of `Item` when
+* adding.
+*
+* ```js
+* var list = new List();
+* list.<span class="apidocCodeKeywordSpan">item</span>('foo', {name: 'foo'});
+* console.log(list.items);
+* //=&gt; [{name: 'foo'}]
+* ```
+*
+* @param  {String} `name` Name of the item to get or add.
+* @param  {Object} `obj` Optional item to add or update.
+* @return {Object} `item`
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.template.list" id="apidoc.element.template.list">
+        function <span class="apidocSignatureSpan">template.</span>list
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function List(options) {
+  Base.call(this, options || {});
+  this.items = [];
+  this.define('keyMap', {});
+  this.define('Item', this.options.Item || require('./item'));
+  this.visit('item', this.options.items || {});
+  delete this.options.items;
+  mixins(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ */
+
+paginate: function (view, options) {
+  var Item = this.get('Item');
+  if (!(view instanceof Item)) {
+    options = options || view || {};
+    this.app.create('list');
+    this.app.<span class="apidocCodeKeywordSpan">list</span>('list.hbs', {
+      content: 'BEFORE\n{{#each pagination.items}}{{locals.title}}\n{{/each}}\nAFTER',
+      locals: {
+        limit: 2,
+        permalinks: {
+          structure: ':collection/:num.html'
+        }
+      }
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.template.super_" id="apidoc.element.template.super_">
+        function <span class="apidocSignatureSpan">template.</span>super_
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Base(options) {
+  this.define('options', options || {});
+  this.define('hints', this.hints || {});
+  this.define('data', this.data || {});
+  this.define('app', this.app || this.options.app || {});
+  this.define('_cache', {});
+  this.define('_callbacks', this._callbacks);
+
+  if (typeof this.options.mixins === 'object') {
+    this.visit('mixin', this.options.mixins);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.template.toString" id="apidoc.element.template.toString">
+        function <span class="apidocSignatureSpan">template.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toString = function () {
+    return text;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+  initFile: function (file) {
+this.src = file.src || {};
+if (this.path) {
+  this.src.path = this.path;
+}
+if (Buffer.isBuffer(this.contents)) {
+  this.content = this.contents.<span class="apidocCodeKeywordSpan">toString</span>();
+}
+if (this.content) {
+  this.options.orig = this.content;
+}
+
+// ensure that `file` has `path` and `content` properties
+this.validate(file);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.template.view" id="apidoc.element.template.view">
+        function <span class="apidocSignatureSpan">template.</span>view
+        <span class="apidocSignatureSpan">(view, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function View(view, options) {
+  this.history = [];
+  Item.call(this, view, options);
+  this.init(view);
+  return view;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  // decorate named loader methods back to the collection
+  // to allow chaining like `.pages().pages()` etc
+  utils.defineProp(views, plural, fn);
+  utils.defineProp(views, single, fn);
+
+  // add collection and view (item) helpers
+  helpers.collection(this, views, opts);
+  helpers.<span class="apidocCodeKeywordSpan">view</span>(this, views, opts);
+  return this;
+},
+
+/**
+ * Set view types for a collection.
+ *
+ * @param {String} `plural` e.g. `pages`
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.template.views" id="apidoc.element.template.views">
+        function <span class="apidocSignatureSpan">template.</span>views
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Views(options) {
+  Collection.call(this, options);
+  this.options.collection = this.options.collection || this;
+  this.define('View', this.options.View || require('./view'));
+  this.define('Item', this.View);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.template.collection" id="apidoc.module.template.collection">module template.collection</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.template.collection.collection" id="apidoc.element.template.collection.collection">
+        function <span class="apidocSignatureSpan">template.</span>collection
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Collection(options) {
+  Base.call(this, options);
+  this.define('lists', {});
+  this.define('_items', {});
+  this.define('Item', this.options.Item || require('./item'));
+  this.define('List', this.options.List || require('./list'));
+  mixins(this);
+
+<span class="apidocCodeCommentSpan">  /**
+   * Get an object representing the current items on the instance.
+   *
+   * ```js
+   * var items = this.items;
+   * ```
+   *
+   * @return {Object} Object of items
+   */
+</span>
+  Object.defineProperty(this, 'items', {
+    enumerable: false,
+    configurable: true,
+    get: function () {
+      return this._items;
+    },
+    set: function (items) {
+      lazy.forIn(items, function (item, key) {
+        delete this._items[key];
+        delete this[key];
+        this.set(key, item);
+      }, this);
+    }
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+  // decorate named loader methods back to the collection
+  // to allow chaining like `.pages().pages()` etc
+  utils.defineProp(views, plural, fn);
+  utils.defineProp(views, single, fn);
+
+  // add collection and view (item) helpers
+  helpers.<span class="apidocCodeKeywordSpan">collection</span>(this, views, opts);
+  helpers.view(this, views, opts);
+  return this;
+},
+
+/**
+ * Set view types for a collection.
+ *
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.template.collection.extend" id="apidoc.element.template.collection.extend">
+        function <span class="apidocSignatureSpan">template.collection.</span>extend
+        <span class="apidocSignatureSpan">(Ctor)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">extend = function (Ctor) {
+  util.inherits(Ctor, Collection);
+  lazy.extend(Ctor, Collection);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+this.init();
+}
+
+/**
+ * Inherit `Base`
+ */
+
+Base.<span class="apidocCodeKeywordSpan">extend</span>(Template);
+
+/**
+ * `Template` prototype methods
+ */
+
+utils.delegate(Template.prototype, {
+constructor: Template,
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.template.collection.super_" id="apidoc.element.template.collection.super_">
+        function <span class="apidocSignatureSpan">template.collection.</span>super_
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Base(options) {
+  this.define('options', options || {});
+  this.define('hints', this.hints || {});
+  this.define('data', this.data || {});
+  this.define('app', this.app || this.options.app || {});
+  this.define('_cache', {});
+  this.define('_callbacks', this._callbacks);
+
+  if (typeof this.options.mixins === 'object') {
+    this.visit('mixin', this.options.mixins);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.template.file" id="apidoc.module.template.file">module template.file</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.template.file.file" id="apidoc.element.template.file.file">
+        function <span class="apidocSignatureSpan">template.</span>file
+        <span class="apidocSignatureSpan">(file, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function File(file, options) {
+  Item.call(this, file, options);
+  this.initFile(file);
+  return file;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.template.file.extend" id="apidoc.element.template.file.extend">
+        function <span class="apidocSignatureSpan">template.file.</span>extend
+        <span class="apidocSignatureSpan">(Ctor)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">extend = function (Ctor) {
+  util.inherits(Ctor, File);
+  lazy.extend(Ctor, File);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+this.init();
+}
+
+/**
+ * Inherit `Base`
+ */
+
+Base.<span class="apidocCodeKeywordSpan">extend</span>(Template);
+
+/**
+ * `Template` prototype methods
+ */
+
+utils.delegate(Template.prototype, {
+constructor: Template,
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.template.file.super_" id="apidoc.element.template.file.super_">
+        function <span class="apidocSignatureSpan">template.file.</span>super_
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Base(options) {
+  this.define('options', options || {});
+  this.define('hints', this.hints || {});
+  this.define('data', this.data || {});
+  this.define('app', this.app || this.options.app || {});
+  this.define('_cache', {});
+  this.define('_callbacks', this._callbacks);
+
+  if (typeof this.options.mixins === 'object') {
+    this.visit('mixin', this.options.mixins);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.template.item" id="apidoc.module.template.item">module template.item</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.template.item.item" id="apidoc.element.template.item.item">
+        function <span class="apidocSignatureSpan">template.</span>item
+        <span class="apidocSignatureSpan">(item, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Item(item, options) {
+  Base.call(this, options);
+  this.define('collection', this.options.collection);
+
+  if (typeof item === 'object') {
+    this.visit('set', item);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+  /**
+* Get or Add an item to the list. Creates a new instance of `Item` when
+* adding.
+*
+* ```js
+* var list = new List();
+* list.<span class="apidocCodeKeywordSpan">item</span>('foo', {name: 'foo'});
+* console.log(list.items);
+* //=&gt; [{name: 'foo'}]
+* ```
+*
+* @param  {String} `name` Name of the item to get or add.
+* @param  {Object} `obj` Optional item to add or update.
+* @return {Object} `item`
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.template.item.extend" id="apidoc.element.template.item.extend">
+        function <span class="apidocSignatureSpan">template.item.</span>extend
+        <span class="apidocSignatureSpan">(Ctor)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">extend = function (Ctor) {
+  util.inherits(Ctor, Item);
+  lazy.extend(Ctor, Item);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+this.init();
+}
+
+/**
+ * Inherit `Base`
+ */
+
+Base.<span class="apidocCodeKeywordSpan">extend</span>(Template);
+
+/**
+ * `Template` prototype methods
+ */
+
+utils.delegate(Template.prototype, {
+constructor: Template,
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.template.item.super_" id="apidoc.element.template.item.super_">
+        function <span class="apidocSignatureSpan">template.item.</span>super_
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Base(options) {
+  this.define('options', options || {});
+  this.define('hints', this.hints || {});
+  this.define('data', this.data || {});
+  this.define('app', this.app || this.options.app || {});
+  this.define('_cache', {});
+  this.define('_callbacks', this._callbacks);
+
+  if (typeof this.options.mixins === 'object') {
+    this.visit('mixin', this.options.mixins);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.template.list" id="apidoc.module.template.list">module template.list</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.template.list.list" id="apidoc.element.template.list.list">
+        function <span class="apidocSignatureSpan">template.</span>list
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function List(options) {
+  Base.call(this, options || {});
+  this.items = [];
+  this.define('keyMap', {});
+  this.define('Item', this.options.Item || require('./item'));
+  this.visit('item', this.options.items || {});
+  delete this.options.items;
+  mixins(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ */
+
+paginate: function (view, options) {
+  var Item = this.get('Item');
+  if (!(view instanceof Item)) {
+    options = options || view || {};
+    this.app.create('list');
+    this.app.<span class="apidocCodeKeywordSpan">list</span>('list.hbs', {
+      content: 'BEFORE\n{{#each pagination.items}}{{locals.title}}\n{{/each}}\nAFTER',
+      locals: {
+        limit: 2,
+        permalinks: {
+          structure: ':collection/:num.html'
+        }
+      }
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.template.list.extend" id="apidoc.element.template.list.extend">
+        function <span class="apidocSignatureSpan">template.list.</span>extend
+        <span class="apidocSignatureSpan">(Ctor)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">extend = function (Ctor) {
+  util.inherits(Ctor, List);
+  lazy.extend(Ctor, List);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+this.init();
+}
+
+/**
+ * Inherit `Base`
+ */
+
+Base.<span class="apidocCodeKeywordSpan">extend</span>(Template);
+
+/**
+ * `Template` prototype methods
+ */
+
+utils.delegate(Template.prototype, {
+constructor: Template,
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.template.list.super_" id="apidoc.element.template.list.super_">
+        function <span class="apidocSignatureSpan">template.list.</span>super_
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Base(options) {
+  this.define('options', options || {});
+  this.define('hints', this.hints || {});
+  this.define('data', this.data || {});
+  this.define('app', this.app || this.options.app || {});
+  this.define('_cache', {});
+  this.define('_callbacks', this._callbacks);
+
+  if (typeof this.options.mixins === 'object') {
+    this.visit('mixin', this.options.mixins);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.template.super_" id="apidoc.module.template.super_">module template.super_</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.template.super_.super_" id="apidoc.element.template.super_.super_">
+        function <span class="apidocSignatureSpan">template.</span>super_
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Base(options) {
+  this.define('options', options || {});
+  this.define('hints', this.hints || {});
+  this.define('data', this.data || {});
+  this.define('app', this.app || this.options.app || {});
+  this.define('_cache', {});
+  this.define('_callbacks', this._callbacks);
+
+  if (typeof this.options.mixins === 'object') {
+    this.visit('mixin', this.options.mixins);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.template.super_.extend" id="apidoc.element.template.super_.extend">
+        function <span class="apidocSignatureSpan">template.super_.</span>extend
+        <span class="apidocSignatureSpan">(Ctor)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">extend = function (Ctor) {
+  util.inherits(Ctor, Base);
+  lazy.extend(Ctor, Base);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+this.init();
+}
+
+/**
+ * Inherit `Base`
+ */
+
+Base.<span class="apidocCodeKeywordSpan">extend</span>(Template);
+
+/**
+ * `Template` prototype methods
+ */
+
+utils.delegate(Template.prototype, {
+constructor: Template,
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.template.super_.prototype" id="apidoc.module.template.super_.prototype">module template.super_.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.template.super_.prototype.addEventListener" id="apidoc.element.template.super_.prototype.addEventListener">
+        function <span class="apidocSignatureSpan">template.super_.prototype.</span>addEventListener
+        <span class="apidocSignatureSpan">(event, fn)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">addEventListener = function (event, fn){
+  this._callbacks = this._callbacks || {};
+  (this._callbacks['$' + event] = this._callbacks['$' + event] || [])
+    .push(fn);
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.template.super_.prototype.clone" id="apidoc.element.template.super_.prototype.clone">
+        function <span class="apidocSignatureSpan">template.super_.prototype.</span>clone
+        <span class="apidocSignatureSpan">(keys)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">clone = function (keys) {
+  var Parent = this.constructor;
+  var opts = lazy.clone(this.options);
+  var res = new Parent(opts);
+
+  lazy.omit(this, keys, function (val, key) {
+    res[key] = lazy.clone(val);
+  });
+  return res;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+   * @param  {String|Array|Function} `loaders` Loaders to use for adding views to the created collection.
+   * @return {Object} Returns the `Assemble` instance for chaining.
+   * @api public
+   */
+
+  create: function (name, opts, loaders) {
+var args = utils.slice(arguments, 1);
+opts = lazy.<span class="apidocCodeKeywordSpan">clone</span>(args.shift());
+loaders = args;
+
+var single = lazy.inflect.singularize(name);
+var plural = lazy.inflect.pluralize(name);
+this.inflections[single] = plural;
+
+if (typeof opts.renameKey === 'undefined' &amp;&amp; this.options.renameKey) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.template.super_.prototype.constructor" id="apidoc.element.template.super_.prototype.constructor">
+        function <span class="apidocSignatureSpan">template.super_.prototype.</span>constructor
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Base(options) {
+  this.define('options', options || {});
+  this.define('hints', this.hints || {});
+  this.define('data', this.data || {});
+  this.define('app', this.app || this.options.app || {});
+  this.define('_cache', {});
+  this.define('_callbacks', this._callbacks);
+
+  if (typeof this.options.mixins === 'object') {
+    this.visit('mixin', this.options.mixins);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.template.super_.prototype.define" id="apidoc.element.template.super_.prototype.define">
+        function <span class="apidocSignatureSpan">template.super_.prototype.</span>define
+        <span class="apidocSignatureSpan">(key, value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">define = function (key, value) {
+  utils.defineProp(this, key, value);
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+this.listen();
+
+engines(this);
+helpers.methods(this);
+lookup(this);
+
+// temporary.
+this.<span class="apidocCodeKeywordSpan">define</span>('errors', {
+  compile: {
+    engine: 'cannot find an engine for: ',
+    method: 'expects engines to have a compile method',
+  },
+  render: {
+    callback: 'is async and expects a callback function: ',
+    engine: 'cannot find an engine for: ',
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.template.super_.prototype.defineOption" id="apidoc.element.template.super_.prototype.defineOption">
+        function <span class="apidocSignatureSpan">template.super_.prototype.</span>defineOption
+        <span class="apidocSignatureSpan">(key, value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">defineOption = function (key, value) {
+  utils.defineProp(this.options, key, value);
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  this.options.plural = this.collection.options.plural;
+  this.options.handled = this.options.handled = [];
+
+  this.src = file.src || {};
+  this.src.path = this.src.path || this.path;
+
+  // add non-emumerable properties
+  this.<span class="apidocCodeKeywordSpan">defineOption</span>('route', this.options.route);
+  this.define('_callbacks', this._callbacks);
+  file.__proto__ = this;
+  file.path = this.path;
+
+  // handle `onLoad` middleware routes
+  this.app.handle('onLoad', file);
+},
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.template.super_.prototype.disable" id="apidoc.element.template.super_.prototype.disable">
+        function <span class="apidocSignatureSpan">template.super_.prototype.</span>disable
+        <span class="apidocSignatureSpan">(key)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">disable = function (key) {
+  this.option(key, false);
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.template.super_.prototype.disabled" id="apidoc.element.template.super_.prototype.disabled">
+        function <span class="apidocSignatureSpan">template.super_.prototype.</span>disabled
+        <span class="apidocSignatureSpan">(key)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">disabled = function (key) {
+  return !Boolean(this.options[key]);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.template.super_.prototype.emit" id="apidoc.element.template.super_.prototype.emit">
+        function <span class="apidocSignatureSpan">template.super_.prototype.</span>emit
+        <span class="apidocSignatureSpan">(event)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">emit = function (event){
+  this._callbacks = this._callbacks || {};
+  var args = [].slice.call(arguments, 1)
+    , callbacks = this._callbacks['$' + event];
+
+  if (callbacks) {
+    callbacks = callbacks.slice(0);
+    for (var i = 0, len = callbacks.length; i &lt; len; ++i) {
+      callbacks[i].apply(this, args);
+    }
+  }
+
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    var args = [].slice.call(arguments);
+    key = [].concat.apply([], args);
+    this.visit('data', key);
+    return this;
+  }
+
+  lazy.set(this.cache.data, key, val);
+  this.<span class="apidocCodeKeywordSpan">emit</span>('data', key, val);
+  return this;
+},
+
+/**
+ * Lazily initalize `router`, to allow options to
+ * be passed in after init.
+ */
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.template.super_.prototype.enable" id="apidoc.element.template.super_.prototype.enable">
+        function <span class="apidocSignatureSpan">template.super_.prototype.</span>enable
+        <span class="apidocSignatureSpan">(key)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">enable = function (key) {
+  this.option(key, true);
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.template.super_.prototype.enabled" id="apidoc.element.template.super_.prototype.enabled">
+        function <span class="apidocSignatureSpan">template.super_.prototype.</span>enabled
+        <span class="apidocSignatureSpan">(key)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">enabled = function (key) {
+  return Boolean(this.options[key]);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+constructor: Item,
+
+/**
+ * Track history for an item: Example: `&lt;tracked: preRender&gt;`
+ */
+
+track: function(method, note) {
+  if (!this.app.<span class="apidocCodeKeywordSpan">enabled</span>('track changes')) {
+    return;
+  }
+  var state = this.omit('history');
+  state.tracked = {location: method, note: note};
+  state.inspect = function() {
+    return '&lt;' + method + ': ' + note + '&gt;';
+  };
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.template.super_.prototype.forIn" id="apidoc.element.template.super_.prototype.forIn">
+        function <span class="apidocSignatureSpan">template.super_.prototype.</span>forIn
+        <span class="apidocSignatureSpan">(fn)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">forIn = function (fn) {
+  lazy.forIn(this, fn, this);
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  Object.defineProperty(this, 'items', {
+    enumerable: false,
+    configurable: true,
+    get: function () {
+      return this._items;
+    },
+    set: function (items) {
+      lazy.<span class="apidocCodeKeywordSpan">forIn</span>(items, function (item, key) {
+        delete this._items[key];
+        delete this[key];
+        this.set(key, item);
+      }, this);
+    }
+  });
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.template.super_.prototype.forOwn" id="apidoc.element.template.super_.prototype.forOwn">
+        function <span class="apidocSignatureSpan">template.super_.prototype.</span>forOwn
+        <span class="apidocSignatureSpan">(fn)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">forOwn = function (fn) {
+  lazy.forOwn(this, fn, this);
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  mergePartials: function (locals, viewTypes) {
+    var names = viewTypes || this.viewTypes.partial;
+    var opts = lazy.extend({}, this.options, locals);
+
+    return names.reduce(function (acc, name) {
+      var collection = this.views[name];
+
+      lazy.<span class="apidocCodeKeywordSpan">forOwn</span>(collection, function (view, key) {
+// handle `onMerge` middleware
+this.handleView('onMerge', view, locals);
+
+if (view.options.nomerge) return;
+if (opts.mergePartials !== false) {
+  name = 'partials';
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.template.super_.prototype.forward" id="apidoc.element.template.super_.prototype.forward">
+        function <span class="apidocSignatureSpan">template.super_.prototype.</span>forward
+        <span class="apidocSignatureSpan">(obj, keys)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">forward = function (obj, keys) {
+  utils.forward(obj, this, keys);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+// wrap loaders to expose the collection and opts
+utils.defineProp(opts, 'wrap', views.wrap.bind(views, opts));
+opts.defaultLoader = opts.defaultLoader || 'default';
+
+// create the actual loader function
+var fn = this.compose(plural, opts);
+views.<span class="apidocCodeKeywordSpan">forward</span>(fn, ['forOwn']);
+
+// forward collection methods onto loader
+utils.setProto(fn, views);
+
+// add loader methods to the instance: `app.pages()`
+this.mixin(single, fn);
+this.mixin(plural, fn);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.template.super_.prototype.fragmentCache" id="apidoc.element.template.super_.prototype.fragmentCache">
+        function <span class="apidocSignatureSpan">template.super_.prototype.</span>fragmentCache
+        <span class="apidocSignatureSpan">(key, val)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">fragmentCache = function (key, val) {
+  if (this._cache[key]) {
+    return this._cache[key];
+  }
+  if (typeof val === 'function') {
+    val = val.call(this);
+  }
+  return (this._cache[key] = val);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    for (var key in self) {
+      var val = self[key];
+      if (typeof val === 'object' &amp;&amp; isMatch(key)) {
+        return val;
+      }
+    }
+  }
+  var res = this.<span class="apidocCodeKeywordSpan">fragmentCache</span>(pattern, find);
+  res.__proto__ = this;
+  return res;
+},
+
+/**
+ * Compile a view in the collection.
+ *
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.template.super_.prototype.get" id="apidoc.element.template.super_.prototype.get">
+        function <span class="apidocSignatureSpan">template.super_.prototype.</span>get
+        <span class="apidocSignatureSpan">(prop)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">get = function (prop) {
+  return lazy.get(this, prop);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ * Load views onto the collection (globs work too)
+ */
+
+app.page('welcome.tmpl', {path: 'welcome.tmpl', content: 'Hello, &lt;%= name %&gt;!'})
+.page('goodbye.tmpl', {path: 'goodbye.tmpl', content: 'Goodbye, &lt;%= name %&gt;!'});
+
+// get a template
+var page = app.pages.<span class="apidocCodeKeywordSpan">get</span>('welcome.tmpl');
+
+// render the template
+page.render({name: 'Bob'}, function (err, res) {
+if (err) return console.log(err);
+console.log(res.content);
+//=&gt; 'Hello, Bob!'
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.template.super_.prototype.hasListeners" id="apidoc.element.template.super_.prototype.hasListeners">
+        function <span class="apidocSignatureSpan">template.super_.prototype.</span>hasListeners
+        <span class="apidocSignatureSpan">(event)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">hasListeners = function (event){
+  return !! this.listeners(event).length;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.template.super_.prototype.hint" id="apidoc.element.template.super_.prototype.hint">
+        function <span class="apidocSignatureSpan">template.super_.prototype.</span>hint
+        <span class="apidocSignatureSpan">(key, val)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">hint = function (key, val) {
+  if (arguments.length === 1) {
+    return this.hints[key];
+  }
+  this.hints[key] = val;
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+}
+
+var res = this.locals;
+var data = this.app.cache.data;
+this.ctx('global', data);
+
+// extend context with same-named data-property from `app.cache.data`
+if (!this.<span class="apidocCodeKeywordSpan">hint</span>('extended')) {
+  this.hint('extended', true);
+  var name = this.collection.renameKey(this.path);
+  this.ctx('matched', data[name]);
+}
+
+this.ctx('data', this.data);
+this.ctx('options', this.options);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.template.super_.prototype.listeners" id="apidoc.element.template.super_.prototype.listeners">
+        function <span class="apidocSignatureSpan">template.super_.prototype.</span>listeners
+        <span class="apidocSignatureSpan">(event)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">listeners = function (event){
+  this._callbacks = this._callbacks || {};
+  return this._callbacks['$' + event] || [];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.template.super_.prototype.mixin" id="apidoc.element.template.super_.prototype.mixin">
+        function <span class="apidocSignatureSpan">template.super_.prototype.</span>mixin
+        <span class="apidocSignatureSpan">(name, fn)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">mixin = function (name, fn) {
+  Base.prototype[name] = fn;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var fn = this.compose(plural, opts);
+views.forward(fn, ['forOwn']);
+
+// forward collection methods onto loader
+utils.setProto(fn, views);
+
+// add loader methods to the instance: `app.pages()`
+this.<span class="apidocCodeKeywordSpan">mixin</span>(single, fn);
+this.mixin(plural, fn);
+
+// decorate named loader methods back to the collection
+// to allow chaining like `.pages().pages()` etc
+utils.defineProp(views, plural, fn);
+utils.defineProp(views, single, fn);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.template.super_.prototype.off" id="apidoc.element.template.super_.prototype.off">
+        function <span class="apidocSignatureSpan">template.super_.prototype.</span>off
+        <span class="apidocSignatureSpan">(event, fn)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">off = function (event, fn){
+  this._callbacks = this._callbacks || {};
+
+  // all
+  if (0 == arguments.length) {
+    this._callbacks = {};
+    return this;
+  }
+
+  // specific event
+  var callbacks = this._callbacks['$' + event];
+  if (!callbacks) return this;
+
+  // remove all handlers
+  if (1 == arguments.length) {
+    delete this._callbacks['$' + event];
+    return this;
+  }
+
+  // remove specific handler
+  var cb;
+  for (var i = 0; i &lt; callbacks.length; i++) {
+    cb = callbacks[i];
+    if (cb === fn || cb.fn === fn) {
+      callbacks.splice(i, 1);
+      break;
+    }
+  }
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.template.super_.prototype.omit" id="apidoc.element.template.super_.prototype.omit">
+        function <span class="apidocSignatureSpan">template.super_.prototype.</span>omit
+        <span class="apidocSignatureSpan">(keys)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">omit = function (keys) {
+  keys = [].concat.apply([], arguments);
+  return lazy.omit(this.clone(), keys);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ */
+
+clone: function (keys) {
+  var Parent = this.constructor;
+  var opts = lazy.clone(this.options);
+  var res = {};
+
+  lazy.<span class="apidocCodeKeywordSpan">omit</span>(this, keys, function (val, key) {
+    res[key] = lazy.clone(val);
+  });
+  return new Parent(res, opts);
+},
+
+/**
+ * Get the basename of a file path.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.template.super_.prototype.on" id="apidoc.element.template.super_.prototype.on">
+        function <span class="apidocSignatureSpan">template.super_.prototype.</span>on
+        <span class="apidocSignatureSpan">(event, fn)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">on = function (event, fn){
+  this._callbacks = this._callbacks || {};
+  (this._callbacks['$' + event] = this._callbacks['$' + event] || [])
+    .push(fn);
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+},
+
+/**
+ * Listen for events
+ */
+
+listen: function () {
+  this.<span class="apidocCodeKeywordSpan">on</span>('option', function (key, value) {
+    if (key === 'mixins') {
+      this.visit('mixin', value);
+    }
+  });
+},
+
+/**
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.template.super_.prototype.once" id="apidoc.element.template.super_.prototype.once">
+        function <span class="apidocSignatureSpan">template.super_.prototype.</span>once
+        <span class="apidocSignatureSpan">(event, fn)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">once = function (event, fn){
+  function on() {
+    this.off(event, on);
+    fn.apply(this, arguments);
+  }
+
+  on.fn = fn;
+  this.on(event, on);
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.template.super_.prototype.option" id="apidoc.element.template.super_.prototype.option">
+        function <span class="apidocSignatureSpan">template.super_.prototype.</span>option
+        <span class="apidocSignatureSpan">(key, val)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">option = function (key, val) {
+  var len = arguments.length;
+  if (typeof key === 'string' &amp;&amp; len === 1) {
+    return lazy.get(this.options, key);
+  }
+
+  if (typeof key === 'object') {
+    this.visit('option', key);
+    return this;
+  }
+
+  lazy.set(this.options, key, val);
+  this.emit('option', key, val);
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    self.handle('onLayout', view);
+    delete view.currentLayout;
+  }
+
+  // actually apply the layout
+  var res = lazy.layouts(str, name, stack, opts, handleLayout);
+
+  view.<span class="apidocCodeKeywordSpan">option</span>('layoutStack', res.history);
+  view.option('layoutApplied', true);
+  view.content = res.result;
+
+  // handle post-layout middleware
+  this.handle('postLayout', view);
+  return view;
+},
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.template.super_.prototype.pick" id="apidoc.element.template.super_.prototype.pick">
+        function <span class="apidocSignatureSpan">template.super_.prototype.</span>pick
+        <span class="apidocSignatureSpan">(keys)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">pick = function (keys) {
+  keys = [].concat.apply([], arguments);
+  return lazy.pick(this.clone(), keys);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.template.super_.prototype.pickOption" id="apidoc.element.template.super_.prototype.pickOption">
+        function <span class="apidocSignatureSpan">template.super_.prototype.</span>pickOption
+        <span class="apidocSignatureSpan">(prop)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">pickOption = function (prop) {
+  var opt = this.option(prop);
+  if (typeof opt === 'undefined') {
+    return this.app &amp;&amp; this.app.option ? this.app.option(prop) : null;
+  }
+  return opt;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+},
+
+/**
+ * Get the basename of a file path.
+ */
+
+renameKey: function(key) {
+  var fn = this.<span class="apidocCodeKeywordSpan">pickOption</span>('renameKey');
+  if (!fn) {
+    fn = this.collection.renameKey || this.app.renameKey;
+  }
+  if (typeof fn !== 'function') return key;
+  return fn(key);
+},
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.template.super_.prototype.removeAllListeners" id="apidoc.element.template.super_.prototype.removeAllListeners">
+        function <span class="apidocSignatureSpan">template.super_.prototype.</span>removeAllListeners
+        <span class="apidocSignatureSpan">(event, fn)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">removeAllListeners = function (event, fn){
+  this._callbacks = this._callbacks || {};
+
+  // all
+  if (0 == arguments.length) {
+    this._callbacks = {};
+    return this;
+  }
+
+  // specific event
+  var callbacks = this._callbacks['$' + event];
+  if (!callbacks) return this;
+
+  // remove all handlers
+  if (1 == arguments.length) {
+    delete this._callbacks['$' + event];
+    return this;
+  }
+
+  // remove specific handler
+  var cb;
+  for (var i = 0; i &lt; callbacks.length; i++) {
+    cb = callbacks[i];
+    if (cb === fn || cb.fn === fn) {
+      callbacks.splice(i, 1);
+      break;
+    }
+  }
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.template.super_.prototype.removeEventListener" id="apidoc.element.template.super_.prototype.removeEventListener">
+        function <span class="apidocSignatureSpan">template.super_.prototype.</span>removeEventListener
+        <span class="apidocSignatureSpan">(event, fn)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">removeEventListener = function (event, fn){
+  this._callbacks = this._callbacks || {};
+
+  // all
+  if (0 == arguments.length) {
+    this._callbacks = {};
+    return this;
+  }
+
+  // specific event
+  var callbacks = this._callbacks['$' + event];
+  if (!callbacks) return this;
+
+  // remove all handlers
+  if (1 == arguments.length) {
+    delete this._callbacks['$' + event];
+    return this;
+  }
+
+  // remove specific handler
+  var cb;
+  for (var i = 0; i &lt; callbacks.length; i++) {
+    cb = callbacks[i];
+    if (cb === fn || cb.fn === fn) {
+      callbacks.splice(i, 1);
+      break;
+    }
+  }
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.template.super_.prototype.removeListener" id="apidoc.element.template.super_.prototype.removeListener">
+        function <span class="apidocSignatureSpan">template.super_.prototype.</span>removeListener
+        <span class="apidocSignatureSpan">(event, fn)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">removeListener = function (event, fn){
+  this._callbacks = this._callbacks || {};
+
+  // all
+  if (0 == arguments.length) {
+    this._callbacks = {};
+    return this;
+  }
+
+  // specific event
+  var callbacks = this._callbacks['$' + event];
+  if (!callbacks) return this;
+
+  // remove all handlers
+  if (1 == arguments.length) {
+    delete this._callbacks['$' + event];
+    return this;
+  }
+
+  // remove specific handler
+  var cb;
+  for (var i = 0; i &lt; callbacks.length; i++) {
+    cb = callbacks[i];
+    if (cb === fn || cb.fn === fn) {
+      callbacks.splice(i, 1);
+      break;
+    }
+  }
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.template.super_.prototype.renameKey" id="apidoc.element.template.super_.prototype.renameKey">
+        function <span class="apidocSignatureSpan">template.super_.prototype.</span>renameKey
+        <span class="apidocSignatureSpan">(key, fn)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">renameKey = function (key, fn) {
+  if (typeof key === 'function') {
+    fn = key;
+    key = null;
+  }
+  if (typeof fn !== 'function') {
+    fn = this.pickOption('renameKey');
+  }
+  if (typeof fn !== 'function') {
+    fn = utils.identity;
+  }
+
+  this.options.renameKey = fn;
+  if (arguments.length === 2) {
+    return fn(key);
+  }
+  if (typeof key === 'string') {
+    return fn(key);
+  }
+  return fn;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var res = this.locals;
+var data = this.app.cache.data;
+this.ctx('global', data);
+
+// extend context with same-named data-property from `app.cache.data`
+if (!this.hint('extended')) {
+  this.hint('extended', true);
+  var name = this.collection.<span class="apidocCodeKeywordSpan">renameKey</span>(this.path);
+  this.ctx('matched', data[name]);
+}
+
+this.ctx('data', this.data);
+this.ctx('options', this.options);
+
+// build up the array of context keys to calculate
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.template.super_.prototype.set" id="apidoc.element.template.super_.prototype.set">
+        function <span class="apidocSignatureSpan">template.super_.prototype.</span>set
+        <span class="apidocSignatureSpan">(prop, val)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">set = function (prop, val) {
+  lazy.set(this, prop, val);
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  if (typeof key === 'object') {
+    var args = [].slice.call(arguments);
+    key = [].concat.apply([], args);
+    this.visit('data', key);
+    return this;
+  }
+
+  lazy.<span class="apidocCodeKeywordSpan">set</span>(this.cache.data, key, val);
+  this.emit('data', key, val);
+  return this;
+},
+
+/**
+ * Lazily initalize `router`, to allow options to
+ * be passed in after init.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.template.super_.prototype.use" id="apidoc.element.template.super_.prototype.use">
+        function <span class="apidocSignatureSpan">template.super_.prototype.</span>use
+        <span class="apidocSignatureSpan">(fn)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">use = function (fn) {
+  fn.call(this, this, this.options);
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.template.super_.prototype.visit" id="apidoc.element.template.super_.prototype.visit">
+        function <span class="apidocSignatureSpan">template.super_.prototype.</span>visit
+        <span class="apidocSignatureSpan">(method, obj)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">visit = function (method, obj) {
+  lazy.visit(this, method, obj);
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+/**
+ * Listen for events
+ */
+
+listen: function () {
+  this.on('option', function (key, value) {
+    if (key === 'mixins') {
+      this.<span class="apidocCodeKeywordSpan">visit</span>('mixin', value);
+    }
+  });
+},
+
+/**
+ * Load data onto `app.cache.data`
+ *
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.template.utils" id="apidoc.module.template.utils">module template.utils</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.template.utils.arrayify" id="apidoc.element.template.utils.arrayify">
+        function <span class="apidocSignatureSpan">template.utils.</span>arrayify
+        <span class="apidocSignatureSpan">(val)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function arrayify(val) {
+  return val ? (Array.isArray(val) ? val : [val]) : [];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ */
+
+delegateLoaders: function (methods) {
+  this.lazyLoaders();
+  var loaders = this.loaders;
+  var self = this;
+
+  utils.<span class="apidocCodeKeywordSpan">arrayify</span>(methods).forEach(function (method) {
+    self.define(method, function() {
+      return loaders[method].apply(loaders, arguments);
+    });
+  });
+},
+
+/**
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.template.utils.bindAll" id="apidoc.element.template.utils.bindAll">
+        function <span class="apidocSignatureSpan">template.utils.</span>bindAll
+        <span class="apidocSignatureSpan">(target, thisArg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function bindAll(target, thisArg) {
+  if (Array.isArray(target)) {
+    return utils.bindEach(target, thisArg);
+  }
+  return lazy.reduce(target, function (acc, fn, key) {
+    if (typeof fn === 'object' &amp;&amp; typeof fn !== 'function') {
+      acc[key] = utils.bindAll(fn, thisArg);
+    } else {
+      acc[key] = fn.bind(thisArg);
+      if (fn.async) {
+        acc[key].async = fn.async;
+      }
+    }
+    return acc;
+  }, {});
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  var thisArg = {};
+  thisArg.options = lazy.extend({}, this.options, locals);
+  thisArg.context = context || {};
+  thisArg.context.view = view;
+  thisArg.app = this;
+
+  // bind template helpers to the instance
+  locals.helpers = utils.<span class="apidocCodeKeywordSpan">bindAll</span>(helpers, thisArg);
+},
+
+/**
+ * Add a router handler.
+ *
+ * @param  {String} `method` Method name.
+ */
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.template.utils.defineProp" id="apidoc.element.template.utils.defineProp">
+        function <span class="apidocSignatureSpan">template.utils.</span>defineProp
+        <span class="apidocSignatureSpan">(obj, prop, val)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function defineProperty(obj, prop, val) {
+  if (typeof obj !== 'object' &amp;&amp; typeof obj !== 'function') {
+    throw new TypeError('expected an object or function.');
+  }
+
+  if (typeof prop !== 'string') {
+    throw new TypeError('expected `prop` to be a string.');
+  }
+
+  if (isDescriptor(val) &amp;&amp; ('set' in val || 'get' in val)) {
+    return Object.defineProperty(obj, prop, val);
+  }
+
+  return Object.defineProperty(obj, prop, {
+    configurable: true,
+    enumerable: false,
+    writable: true,
+    value: val
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+this.define(classKey, ViewClass);
+
+// init the collection object on `views`
+this.views[plural] = views;
+this.loader(plural, opts, loaders);
+
+// wrap loaders to expose the collection and opts
+utils.<span class="apidocCodeKeywordSpan">defineProp</span>(opts, 'wrap', views.wrap.bind(views, opts));
+opts.defaultLoader = opts.defaultLoader || 'default';
+
+// create the actual loader function
+var fn = this.compose(plural, opts);
+views.forward(fn, ['forOwn']);
+
+// forward collection methods onto loader
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.template.utils.delegate" id="apidoc.element.template.utils.delegate">
+        function <span class="apidocSignatureSpan">template.utils.</span>delegate
+        <span class="apidocSignatureSpan">(receiver, provider, clone)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function delegate(receiver, provider, clone) {
+  if (clone) {
+    provider = clone(provider || receiver);
+  } else {
+    provider = provider || receiver;
+  }
+
+  for (var key in provider) {
+    define(receiver, key, provider[key]);
+  }
+  return receiver;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+Base.extend(Template);
+
+/**
+ * `Template` prototype methods
+ */
+
+utils.<span class="apidocCodeKeywordSpan">delegate</span>(Template.prototype, {
+constructor: Template,
+
+/**
+ * Initialize defaults
+ */
+
+init: function () {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.template.utils.error" id="apidoc.element.template.utils.error">
+        function <span class="apidocSignatureSpan">template.utils.</span>error
+        <span class="apidocSignatureSpan">(msg, val)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function error(msg, val) {
+  throw new Error(msg + JSON.stringify(val));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+}
+
+// get the engine to use
+locals = locals || {};
+var engine = this.engine(locals.engine ? locals.engine : view.engine);
+
+if (typeof engine === 'undefined') {
+  throw this.<span class="apidocCodeKeywordSpan">error</span>('compile', 'engine', view);
+}
+if (!engine.hasOwnProperty('compile')) {
+  throw this.error('compile', 'method', engine);
+}
+
+view.ctx('compile', locals);
+// build the context to pass to the engine
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.template.utils.forward" id="apidoc.element.template.utils.forward">
+        function <span class="apidocSignatureSpan">template.utils.</span>forward
+        <span class="apidocSignatureSpan">(receiver, provider, methods)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function forward(receiver, provider, methods) {
+  methods.forEach(function (method) {
+    receiver[method] = function () {
+      return provider[method].apply(provider, arguments);
+    };
+  });
+  return receiver;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+// wrap loaders to expose the collection and opts
+utils.defineProp(opts, 'wrap', views.wrap.bind(views, opts));
+opts.defaultLoader = opts.defaultLoader || 'default';
+
+// create the actual loader function
+var fn = this.compose(plural, opts);
+views.<span class="apidocCodeKeywordSpan">forward</span>(fn, ['forOwn']);
+
+// forward collection methods onto loader
+utils.setProto(fn, views);
+
+// add loader methods to the instance: `app.pages()`
+this.mixin(single, fn);
+this.mixin(plural, fn);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.template.utils.getLocals" id="apidoc.element.template.utils.getLocals">
+        function <span class="apidocSignatureSpan">template.utils.</span>getLocals
+        <span class="apidocSignatureSpan">(locals, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getLocals(locals, options) {
+  options = options || {};
+  locals = locals || {};
+  var ctx = {};
+
+  if (options.hasOwnProperty('hash')) {
+    lazy.extend(ctx, locals);
+    lazy.extend(ctx, options.hash);
+
+  } else if (locals.hasOwnProperty('hash')) {
+    lazy.extend(ctx, locals.hash);
+
+  } else if (!locals.hasOwnProperty('hash') &amp;&amp; !options.hasOwnProperty('hash')) {
+    lazy.extend(ctx, options);
+    lazy.extend(ctx, locals);
+  }
+  return ctx;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.template.utils.identity" id="apidoc.element.template.utils.identity">
+        function <span class="apidocSignatureSpan">template.utils.</span>identity
+        <span class="apidocSignatureSpan">(val)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function identity(val) {
+  return val;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.template.utils.isLoader" id="apidoc.element.template.utils.isLoader">
+        function <span class="apidocSignatureSpan">template.utils.</span>isLoader
+        <span class="apidocSignatureSpan">(val, cache)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isLoader(val, cache) {
+  return typeof val === 'function'
+    || cache &amp;&amp; typeof val === 'string' &amp;&amp; cache[val]
+    || utils.isStream(val)
+    || utils.isPromise(val)
+    || Array.isArray(val);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ * two elements, where the first element is options
+ * and the second an array of arguments.
+ */
+
+utils.slice = function slice(arr, i) {
+var args = [].slice.call(arr, i);
+var opts = {};
+if (!utils.<span class="apidocCodeKeywordSpan">isLoader</span>(args[0])) {
+  opts = args.shift();
+}
+var last = args[args.length - 1];
+if (lazy.isObject(last) &amp;&amp; !utils.isLoader(last)) {
+  lazy.extend(opts, args.pop());
+}
+opts = opts || {};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.template.utils.isPromise" id="apidoc.element.template.utils.isPromise">
+        function <span class="apidocSignatureSpan">template.utils.</span>isPromise
+        <span class="apidocSignatureSpan">(val)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isPromise(val) {
+  return val &amp;&amp; lazy.isObject(val) &amp;&amp; typeof val.then === 'function';
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+* @return {Boolean}
+*/
+
+utils.isLoader = function isLoader(val, cache) {
+ return typeof val === 'function'
+   || cache &amp;&amp; typeof val === 'string' &amp;&amp; cache[val]
+   || utils.isStream(val)
+   || utils.<span class="apidocCodeKeywordSpan">isPromise</span>(val)
+   || Array.isArray(val);
+};
+
+/**
+* Return true if the given object is a stream.
+*
+* @param  {Object} `val`
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.template.utils.isStream" id="apidoc.element.template.utils.isStream">
+        function <span class="apidocSignatureSpan">template.utils.</span>isStream
+        <span class="apidocSignatureSpan">(val)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isStream(val) {
+  return val &amp;&amp; lazy.isObject(val) &amp;&amp; typeof val.pipe === 'function';
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+* @param  {Object} `val`
+* @return {Boolean}
+*/
+
+utils.isLoader = function isLoader(val, cache) {
+ return typeof val === 'function'
+   || cache &amp;&amp; typeof val === 'string' &amp;&amp; cache[val]
+   || utils.<span class="apidocCodeKeywordSpan">isStream</span>(val)
+   || utils.isPromise(val)
+   || Array.isArray(val);
+};
+
+/**
+* Return true if the given object is a stream.
+*
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.template.utils.matchKey" id="apidoc.element.template.utils.matchKey">
+        function <span class="apidocSignatureSpan">template.utils.</span>matchKey
+        <span class="apidocSignatureSpan">(obj, patterns, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function matchKey(obj, patterns, options) {
+  if (typeof obj === 'undefined') return null;
+  var keys = lazy.mm(Object.keys(obj), patterns, options);
+  return obj[keys[0]];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ */
+
+matchView: function(collection, pattern, options) {
+  var views = this.getViews(collection);
+  if (views.hasOwnProperty(pattern)) {
+    return views[pattern];
+  }
+  return utils.<span class="apidocCodeKeywordSpan">matchKey</span>(views, pattern, options);
+},
+
+/**
+ * Returns any templates from the specified collection with keys
+ * that match the given glob pattern.
+ *
+ * ```js
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.template.utils.matchKeys" id="apidoc.element.template.utils.matchKeys">
+        function <span class="apidocSignatureSpan">template.utils.</span>matchKeys
+        <span class="apidocSignatureSpan">(obj, patterns, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function matchKeys(obj, patterns, options) {
+  var keys = lazy.mm(Object.keys(obj), patterns, options).sort();
+  var len = keys.length, i = 0;
+  var res = {};
+
+  while (len--) {
+    var key = keys[i++];
+    res[key] = obj[key];
+  }
+  return res;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ * @param {Object} `options` options to pass to [micromatch]
+ * @return {Object}
+ * @api public
+ */
+
+matchViews: function(collection, pattern, options) {
+  var views = this.getViews(collection);
+  return utils.<span class="apidocCodeKeywordSpan">matchKeys</span>(views, pattern, options);
+},
+
+/**
+ * Get a specific template from the specified collection.
+ *
+ * ```js
+ * app.getView('pages', 'a.hbs', function(fp) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.template.utils.noop" id="apidoc.element.template.utils.noop">
+        function <span class="apidocSignatureSpan">template.utils.</span>noop
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function noop() {
+  return;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.template.utils.rename" id="apidoc.element.template.utils.rename">
+        function <span class="apidocSignatureSpan">template.utils.</span>rename
+        <span class="apidocSignatureSpan">(views, fn)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function rename(views, fn) {
+  if (typeof fn !== 'function') {
+    fn = path.basename;
+  }
+  for (var key in views) {
+    if (views.hasOwnProperty(key)) {
+      views[fn(key)] = views[key];
+      delete views[key];
+    }
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.template.utils.setProto" id="apidoc.element.template.utils.setProto">
+        function <span class="apidocSignatureSpan">template.utils.</span>setProto
+        <span class="apidocSignatureSpan">(obj, proto)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function setProto(obj, proto) {
+  return Object.setPrototypeOf
+    ? Object.setPrototypeOf(obj, proto)
+    : (obj.__proto__ = proto);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+opts.defaultLoader = opts.defaultLoader || 'default';
+
+// create the actual loader function
+var fn = this.compose(plural, opts);
+views.forward(fn, ['forOwn']);
+
+// forward collection methods onto loader
+utils.<span class="apidocCodeKeywordSpan">setProto</span>(fn, views);
+
+// add loader methods to the instance: `app.pages()`
+this.mixin(single, fn);
+this.mixin(plural, fn);
+
+// decorate named loader methods back to the collection
+// to allow chaining like `.pages().pages()` etc
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.template.utils.slice" id="apidoc.element.template.utils.slice">
+        function <span class="apidocSignatureSpan">template.utils.</span>slice
+        <span class="apidocSignatureSpan">(arr, i)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function slice(arr, i) {
+  var args = [].slice.call(arr, i);
+  var opts = {};
+  if (!utils.isLoader(args[0])) {
+    opts = args.shift();
+  }
+  var last = args[args.length - 1];
+  if (lazy.isObject(last) &amp;&amp; !utils.isLoader(last)) {
+    lazy.extend(opts, args.pop());
+  }
+  opts = opts || {};
+  return lazy.flatten([opts, args]);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+   * @param  {Object} `opts` Collection options
+   * @param  {String|Array|Function} `loaders` Loaders to use for adding views to the created collection.
+   * @return {Object} Returns the `Assemble` instance for chaining.
+   * @api public
+   */
+
+  create: function (name, opts, loaders) {
+var args = utils.<span class="apidocCodeKeywordSpan">slice</span>(arguments, 1);
+opts = lazy.clone(args.shift());
+loaders = args;
+
+var single = lazy.inflect.singularize(name);
+var plural = lazy.inflect.pluralize(name);
+this.inflections[single] = plural;
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.template.view" id="apidoc.module.template.view">module template.view</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.template.view.view" id="apidoc.element.template.view.view">
+        function <span class="apidocSignatureSpan">template.</span>view
+        <span class="apidocSignatureSpan">(view, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function View(view, options) {
+  this.history = [];
+  Item.call(this, view, options);
+  this.init(view);
+  return view;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  // decorate named loader methods back to the collection
+  // to allow chaining like `.pages().pages()` etc
+  utils.defineProp(views, plural, fn);
+  utils.defineProp(views, single, fn);
+
+  // add collection and view (item) helpers
+  helpers.collection(this, views, opts);
+  helpers.<span class="apidocCodeKeywordSpan">view</span>(this, views, opts);
+  return this;
+},
+
+/**
+ * Set view types for a collection.
+ *
+ * @param {String} `plural` e.g. `pages`
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.template.view.extend" id="apidoc.element.template.view.extend">
+        function <span class="apidocSignatureSpan">template.view.</span>extend
+        <span class="apidocSignatureSpan">(Ctor)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">extend = function (Ctor) {
+  util.inherits(Ctor, View);
+  lazy.extend(Ctor, View);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+this.init();
+}
+
+/**
+ * Inherit `Base`
+ */
+
+Base.<span class="apidocCodeKeywordSpan">extend</span>(Template);
+
+/**
+ * `Template` prototype methods
+ */
+
+utils.delegate(Template.prototype, {
+constructor: Template,
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.template.view.super_" id="apidoc.element.template.view.super_">
+        function <span class="apidocSignatureSpan">template.view.</span>super_
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Base(options) {
+  this.define('options', options || {});
+  this.define('hints', this.hints || {});
+  this.define('data', this.data || {});
+  this.define('app', this.app || this.options.app || {});
+  this.define('_cache', {});
+  this.define('_callbacks', this._callbacks);
+
+  if (typeof this.options.mixins === 'object') {
+    this.visit('mixin', this.options.mixins);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.template.views" id="apidoc.module.template.views">module template.views</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.template.views.views" id="apidoc.element.template.views.views">
+        function <span class="apidocSignatureSpan">template.</span>views
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Views(options) {
+  Collection.call(this, options);
+  this.options.collection = this.options.collection || this;
+  this.define('View', this.options.View || require('./view'));
+  this.define('Item', this.View);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.template.views.extend" id="apidoc.element.template.views.extend">
+        function <span class="apidocSignatureSpan">template.views.</span>extend
+        <span class="apidocSignatureSpan">(Ctor)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">extend = function (Ctor) {
+  util.inherits(Ctor, Views);
+  lazy.extend(Ctor, Views);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+this.init();
+}
+
+/**
+ * Inherit `Base`
+ */
+
+Base.<span class="apidocCodeKeywordSpan">extend</span>(Template);
+
+/**
+ * `Template` prototype methods
+ */
+
+utils.delegate(Template.prototype, {
+constructor: Template,
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.template.views.super_" id="apidoc.element.template.views.super_">
+        function <span class="apidocSignatureSpan">template.views.</span>super_
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Base(options) {
+  this.define('options', options || {});
+  this.define('hints', this.hints || {});
+  this.define('data', this.data || {});
+  this.define('app', this.app || this.options.app || {});
+  this.define('_cache', {});
+  this.define('_callbacks', this._callbacks);
+
+  if (typeof this.options.mixins === 'object') {
+    this.visit('mixin', this.options.mixins);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
