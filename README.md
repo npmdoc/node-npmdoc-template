@@ -1,6 +1,6 @@
 # npmdoc-template
 
-#### api documentation for  [template (v0.17.5)](https://github.com/jonschlinkert/template)  [![npm package](https://img.shields.io/npm/v/npmdoc-template.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-template) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-template.svg)](https://travis-ci.org/npmdoc/node-npmdoc-template)
+#### basic api documentation for  [template (v0.17.5)](https://github.com/jonschlinkert/template)  [![npm package](https://img.shields.io/npm/v/npmdoc-template.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-template) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-template.svg)](https://travis-ci.org/npmdoc/node-npmdoc-template)
 
 #### Render templates using any engine. Supports, layouts, pages, partials and custom template types. Use template helpers, middleware, routes, loaders, and lots more. Powers assemble, verb and other node.js apps.
 
@@ -192,7 +192,8 @@
             ]
         }
     },
-    "version": "0.17.5"
+    "version": "0.17.5",
+    "bin": {}
 }
 ```
 
