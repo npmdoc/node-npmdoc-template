@@ -119,15 +119,6 @@
 
         <li>
 
-            <a class="apidocElementLiA" href="#apidoc.element.template.toString">
-            function <span class="apidocSignatureSpan">template.</span>toString
-            <span class="apidocSignatureSpan">()</span>
-            </a>
-
-        </li>
-
-        <li>
-
             <a class="apidocElementLiA" href="#apidoc.element.template.view">
             function <span class="apidocSignatureSpan">template.</span>view
             <span class="apidocSignatureSpan">(view, options)</span>
@@ -1069,37 +1060,6 @@ paginate: function (view, options) {
 
 
     <h2>
-        <a href="#apidoc.element.template.toString" id="apidoc.element.template.toString">
-        function <span class="apidocSignatureSpan">template.</span>toString
-        <span class="apidocSignatureSpan">()</span>
-        </a>
-    </h2>
-    <ul>
-    <li>description and source-code<pre class="apidocCodePre">toString = function () {
-    return text;
-}</pre></li>
-    <li>example usage<pre class="apidocCodePre">...
-
-  initFile: function (file) {
-this.src = file.src || {};
-if (this.path) {
-  this.src.path = this.path;
-}
-if (Buffer.isBuffer(this.contents)) {
-  this.content = this.contents.<span class="apidocCodeKeywordSpan">toString</span>();
-}
-if (this.content) {
-  this.options.orig = this.content;
-}
-
-// ensure that `file` has `path` and `content` properties
-this.validate(file);
-...</pre></li>
-    </ul>
-
-
-
-    <h2>
         <a href="#apidoc.element.template.view" id="apidoc.element.template.view">
         function <span class="apidocSignatureSpan">template.</span>view
         <span class="apidocSignatureSpan">(view, options)</span>
@@ -1771,7 +1731,22 @@ this.<span class="apidocCodeKeywordSpan">define</span>('errors', {
   this.option(key, false);
   return this;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  return this;
+},
+
+/**
+ * Disable `key`.
+ *
+ * ```js
+ * app.<span class="apidocCodeKeywordSpan">disable</span>('a');
+ * ```
+ *
+ * @param {String} `key` The option to disable.
+ * @return {Object} `Options`to enable chaining
+ * @api public
+ */
+...</pre></li>
     </ul>
 
 
@@ -1786,7 +1761,23 @@ this.<span class="apidocCodeKeywordSpan">define</span>('errors', {
     <li>description and source-code<pre class="apidocCodePre">disabled = function (key) {
   return !Boolean(this.options[key]);
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  return Boolean(this.options[key]);
+},
+
+/**
+ * Check if `key` is disabled (falsey).
+ *
+ * ```js
+ * app.<span class="apidocCodeKeywordSpan">disabled</span>('a');
+ * //=&gt; true
+ *
+ * app.enable('a');
+ * app.disabled('a');
+ * //=&gt; false
+ * ```
+ *
+...</pre></li>
     </ul>
 
 
@@ -1844,7 +1835,23 @@ this.<span class="apidocCodeKeywordSpan">define</span>('errors', {
   this.option(key, true);
   return this;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  return this;
+},
+
+/**
+ * Enable `key`.
+ *
+ * ```js
+ * app.<span class="apidocCodeKeywordSpan">enable</span>('a');
+ * ```
+ * @param {String} `key`
+ * @return {Object} `Options`to enable chaining
+ * @api public
+ */
+
+enable: function(key) {
+...</pre></li>
     </ul>
 
 
@@ -1860,21 +1867,21 @@ this.<span class="apidocCodeKeywordSpan">define</span>('errors', {
   return Boolean(this.options[key]);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-constructor: Item,
+  return this;
+},
 
 /**
- * Track history for an item: Example: `&lt;tracked: preRender&gt;`
- */
-
-track: function(method, note) {
-  if (!this.app.<span class="apidocCodeKeywordSpan">enabled</span>('track changes')) {
-    return;
-  }
-  var state = this.omit('history');
-  state.tracked = {location: method, note: note};
-  state.inspect = function() {
-    return '&lt;' + method + ': ' + note + '&gt;';
-  };
+ * Check if `key` is enabled (truthy).
+ *
+ * ```js
+ * app.<span class="apidocCodeKeywordSpan">enabled</span>('a');
+ * //=&gt; false
+ *
+ * app.enable('a');
+ * app.enabled('a');
+ * //=&gt; true
+ * ```
+ *
 ...</pre></li>
     </ul>
 
@@ -1892,21 +1899,20 @@ track: function(method, note) {
   return this;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-  Object.defineProperty(this, 'items', {
-    enumerable: false,
-    configurable: true,
-    get: function () {
-      return this._items;
-    },
-    set: function (items) {
-      lazy.<span class="apidocCodeKeywordSpan">forIn</span>(items, function (item, key) {
-        delete this._items[key];
-        delete this[key];
-        this.set(key, item);
-      }, this);
-    }
-  });
-}
+},
+
+/**
+ * Iterate over the keys on the object
+ */
+
+forIn: function (fn) {
+  lazy.<span class="apidocCodeKeywordSpan">forIn</span>(this, fn, this);
+  return this;
+},
+
+/**
+ * Call the given method on all values in `obj`.
+ */
 ...</pre></li>
     </ul>
 
@@ -2023,20 +2029,21 @@ this.mixin(plural, fn);
   return lazy.get(this, prop);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
- * Load views onto the collection (globs work too)
- */
+    if (key.indexOf('.') === -1) {
+      return this.cache.data[key];
+    }
+    if (lazy.isGlob(key)) {
+      this.compose('data')(key, val);
+      return this;
+    }
+    return lazy.<span class="apidocCodeKeywordSpan">get</span>(this.cache.data, key);
+  }
+}
 
-app.page('welcome.tmpl', {path: 'welcome.tmpl', content: 'Hello, &lt;%= name %&gt;!'})
-.page('goodbye.tmpl', {path: 'goodbye.tmpl', content: 'Goodbye, &lt;%= name %&gt;!'});
-
-// get a template
-var page = app.pages.<span class="apidocCodeKeywordSpan">get</span>('welcome.tmpl');
-
-// render the template
-page.render({name: 'Bob'}, function (err, res) {
-if (err) return console.log(err);
-console.log(res.content);
-//=&gt; 'Hello, Bob!'
+if (typeof key === 'object') {
+  var args = [].slice.call(arguments);
+  key = [].concat.apply([], args);
+  this.visit('data', key);
 ...</pre></li>
     </ul>
 
@@ -2197,16 +2204,16 @@ utils.defineProp(views, single, fn);
 clone: function (keys) {
   var Parent = this.constructor;
   var opts = lazy.clone(this.options);
-  var res = {};
+  var res = new Parent(opts);
 
   lazy.<span class="apidocCodeKeywordSpan">omit</span>(this, keys, function (val, key) {
     res[key] = lazy.clone(val);
   });
-  return new Parent(res, opts);
+  return res;
 },
 
 /**
- * Get the basename of a file path.
+ * Set a non-enumerable "hint".
 ...</pre></li>
     </ul>
 
@@ -2322,7 +2329,23 @@ listen: function () {
   keys = [].concat.apply([], arguments);
   return lazy.pick(this.clone(), keys);
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+/**
+ * Return a clone of item, with only the given keys.
+ */
+
+pick: function(keys) {
+  keys = [].concat.apply([], arguments);
+  return lazy.<span class="apidocCodeKeywordSpan">pick</span>(this.clone(), keys);
+},
+
+/**
+ * Iterate over the 'own' keys on the object.
+ */
+
+forOwn: function (fn) {
+...</pre></li>
     </ul>
 
 
@@ -2342,20 +2365,21 @@ listen: function () {
   return opt;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-},
 
-/**
- * Get the basename of a file path.
- */
+  renameKey: function (key, fn) {
+if (typeof key === 'function') {
+  fn = key;
+  key = null;
+}
+if (typeof fn !== 'function') {
+  fn = this.<span class="apidocCodeKeywordSpan">pickOption</span>('renameKey');
+}
+if (typeof fn !== 'function') {
+  fn = utils.identity;
+}
 
-renameKey: function(key) {
-  var fn = this.<span class="apidocCodeKeywordSpan">pickOption</span>('renameKey');
-  if (!fn) {
-    fn = this.collection.renameKey || this.app.renameKey;
-  }
-  if (typeof fn !== 'function') return key;
-  return fn(key);
-},
+this.options.renameKey = fn;
+if (arguments.length === 2) {
 ...</pre></li>
     </ul>
 
